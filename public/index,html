@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giveaway Data-Track - Config</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:18px}
+    label{display:block;margin-top:8px}
+    input, textarea, select{width:100%;padding:8px;margin-top:6px}
+    button{padding:8px 12px;margin-top:10px}
+    .row{display:flex;gap:8px}
+    .small{width:120px}
+  </style>
+</head>
+<body>
+  <h1>Giveaway Data-Track - Web UI</h1>
+  <p>Configure tracked channels and display channel (use channel IDs). No auth by default — set OWNER_ID env var to require an <code>x-user-id</code> header matching your ID for config changes.</p>
+
+  <label>Tracked channel IDs (comma-separated)</label>
+  <textarea id="trackedChannels" rows="3"></textarea>
+
+  <label>Display channel ID</label>
+  <input id="displayChannel" />
+
+  <label>Update interval (minutes)</label>
+  <input id="interval" type="number" value="30" />
+
+  <div class="row">
+    <button id="save">Save config</button>
+    <button id="scan">Trigger scan & update now</button>
+  </div>
+
+  <h2>Current tracked entries</h2>
+  <div id="entries"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
